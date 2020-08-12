@@ -1,18 +1,22 @@
-from setuptools import setup, find_packages
+import setuptools
 
-setup(
-    name='ectrello',
-    version='0.1',
-    packages=find_packages(),
-    # py_modules=['main'],
-    include_package_data=True,
-    install_requires=[
-        'Click', 'requests', 'autopep8', 'pycodestyle'
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
+setuptools.setup(
+    name="ectrello", # Replace with your own username
+    version="1.0",
+    author="Hadi Alnehlawi",
+    author_email="hadi.alnehlawi@gmail.com,
+    description="Easy And Productive CLI To Interac With Trello API",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    url="https://github.com/pypa/sampleproject",
+    packages=setuptools.find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
     ],
-    entry_points={
-        'console_scripts': [
-            'ectrello=ectrello.main:cli'
-        ]
-    }
+    python_requires='>=3.6',
 )
